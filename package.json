@@ -1,0 +1,27 @@
+{
+  "name": "communityserveus",
+  "version": "1.0.0",
+  "description": "Community service app",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Doncurt/CommunityServeUs.git"
+  },
+  "keywords": [
+    "community"
+  ],
+  "author": "Jake Tran, Donovan Adams",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Doncurt/CommunityServeUs/issues"
+  },
+  "homepage": "https://github.com/Doncurt/CommunityServeUs#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0"
+  }
+}
