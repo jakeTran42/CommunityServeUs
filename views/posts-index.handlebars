@@ -1,0 +1,23 @@
+<div class="row">
+  {{#posts}}
+  <div class="col-sm-8 col-sm-offset-2">
+    <li class="list-group-item">
+      <a href="/posts/{{this._id}}" class="lead">{{this.title}}</a>
+    </br>
+      <p>Submitted by {{this.username}}<p>
+      <a href="{{this.url}}" target="_blank">{{this.url}}<a>
+        <div class="text-right">
+        <a href="/n/{{this.subreddit}}">{{this.subreddit}}<a>
+      </div>
+      <form class="vote-up" data-id="{{post._id}}">
+        <button type="submit">Vote Up</button>
+      </form>
+
+      <form class="vote-down" data-id="{{post._id}}">
+        <button type="submit">Vote Down</button>
+      </form>
+    </li>
+  </div>
+
+    {{/posts}}
+</div>

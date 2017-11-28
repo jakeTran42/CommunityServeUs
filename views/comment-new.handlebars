@@ -1,0 +1,29 @@
+<li class="list-group-item">
+
+{{comment.content}}
+</li>
+{{#each comment.comments}}
+<li class="list-group-item">
+{{this.content}}
+</li>
+{{/each}}
+<br>
+<!-- For new posts -->
+<div class="row">
+    <div class="col-sm-4"></div>
+
+  <div class="col-sm-4">
+    <form method="POST" action="/comments/{{comment._id}}">
+      <legend>New Comment on Comment</legend>
+      <div class="form-group">
+        <label for="comment-content">Comment</label>
+        <input type="text" name="content" class="form-control" id="comment-content" placeholder="Comment"></input>
+      </div>
+
+      <div class='text-right'>
+        <button type="submit" class="btn btn-primary">Reply<button>
+      </div>
+
+    </form>
+  </div>
+</div>
