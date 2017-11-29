@@ -15,8 +15,10 @@ var Comment = require('./models/comment.js');
 
 
 const app = express()
-// mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI ||'mongodb://localhost/putit');
+// sets mongoose promise to built in JS promise
+mongoose.Promise = global.Promise;
+mongoose.connect(
+  'mongodb://localhost/CommunityServesUs', { useMongoClient: true });
 
 app.use(cookieParser())
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -51,5 +53,5 @@ require('./controllers/posts')(app)
 require('./controllers/comments')(app)
 
 app.listen(process.env.PORT||3000, ()=> {
-  console.log('Server for PutIt listening on port 3000!')
+  console.log('Server for CommunityServesUs listening on port 3000!')
 })
