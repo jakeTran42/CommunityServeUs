@@ -14,6 +14,8 @@ const Post = require('./models/post.js');
 var Comment = require('./models/comment.js');
 //Custom css and JQuery
 const app = express()
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(express.static('public'));
 
 
@@ -23,7 +25,8 @@ mongoose.connect(
   'mongodb://localhost/CommunityServesUs', { useMongoClient: true });
 
 app.use(cookieParser())
-app.use(bodyParser.urlencoded({ extended: true }));
+
+
 //middle wear for authori
 var checkAuth = (req, res, next) => {
   console.log("Checking authentication");
