@@ -12,9 +12,11 @@ const mongoose = require('mongoose');
 // self defined variables and requirements
 const Post = require('./models/post.js');
 var Comment = require('./models/comment.js');
-
-
+//Custom css and JQuery
 const app = express()
+app.use(express.static('public'));
+
+
 // sets mongoose promise to built in JS promise
 mongoose.Promise = global.Promise;
 mongoose.connect(
