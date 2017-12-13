@@ -15,7 +15,7 @@ module.exports = (app) => {
   //votes up and down
 
 
- 
+
 app.put('posts/:id/vote-up', function (req, res) {
   Post.findById(req.params.id).exec(function (err, post) {
     post.upVotes.push(req.user._id)
@@ -118,5 +118,11 @@ app.put('posts/:id/vote-down', function (req, res) {
     res.redirect('/');
   });
   // associating the user with their posts and comments
+
+
+//LOGOUT ROUTE
+app.get('/contact', function (req, res) {
+    res.render('contact');
+})
 
 }
