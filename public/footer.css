@@ -1,5 +1,22 @@
+
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+*{
+	padding:0;
+	margin:0;
+}
+
+footer{
+	position: fixed;
+  left: 0;
+  bottom: 0;
+	text-align: center;
+	width: 100%;
+	height: 225px;
+}
+
 .footer-distributed{
-	background-color: #292c2f;
+	background-color: #404248;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
 	width: 100%;
@@ -32,7 +49,7 @@
 }
 
 .footer-distributed h3 span{
-	color:  #5383d3;
+	color:  #2DDDB3;
 }
 
 /* Footer links */
@@ -123,6 +140,10 @@
 	margin-bottom: 20px;
 }
 
+.footer-company-about {
+	font-style: italic;
+}
+
 .footer-distributed .footer-icons{
 	margin-top: 25px;
 }
@@ -165,4 +186,9 @@
 		margin-left: 0;
 	}
 
+}
+
+@media (max-height:800px){
+	footer { position: static; }
+	header { padding-top:40px; }
 }
