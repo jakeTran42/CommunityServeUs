@@ -29,7 +29,7 @@ app.use(cookieParser())
 
 //middle wear for authori
 var checkAuth = (req, res, next) => {
-  console.log("Checking authentication");
+  console.log("*** Checking authentication");
 
   if (typeof req.cookies.nToken === 'undefined' || req.cookies.nToken === null) {
     req.user = null;

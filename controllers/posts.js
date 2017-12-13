@@ -92,13 +92,26 @@ app.put('posts/:id/vote-down', function (req, res) {
 
      // CREATE
   app.post('/posts', (req, res) => {
+
+    if (!req.user) {
+      return res.redirect('/login');
+    }
+
     // INSTANTIATE INSTANCE OF POST MODEL
     var post = new Post(req.body);
+    // what if user is not defined?
+    post.author = req.user
+
+    console.log("post /posts ------------------------------");
+    console.log(post);
 
     // SAVE INSTANCE OF POST MODEL TO DB
-    post.save((err, post) => {
+    post.save().then((post) => {
       // REDIRECT TO THE ROOT
       return res.redirect('/');
+    }).catch((err) => {
+      console.log("*** posts /posts err");
+      console.log(err.message);
     })
   });
 
