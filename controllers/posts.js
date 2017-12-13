@@ -45,7 +45,7 @@ app.put('posts/:id/vote-down', function (req, res) {
     console.log(err.message);
   });
 })
-  //Allwos topost a new post including the subreddit it is in
+  //Allwos topost a new post including the category it is in
   app.get('/posts/new', (req, res) => {
     const currentUser = req.user;
     res.render('posts-new', { currentUser });
@@ -63,7 +63,7 @@ app.put('posts/:id/vote-down', function (req, res) {
    })
 
 
-
+/**
   // CREATE POST
   app.post('/posts',  (req, res)=> {
 
@@ -75,7 +75,7 @@ app.put('posts/:id/vote-down', function (req, res) {
 
          // INSTANTIATE INSTANCE OF POST MODEL
          var post = new Post(req.body);
-
+         console.log(req.body);
          User.findById(req.user._id).then((user) => {
              post.author = user
              return post.save()
@@ -86,14 +86,28 @@ app.put('posts/:id/vote-down', function (req, res) {
              res.redirect('/posts/new')
          })
 
-
-
      })
-// Route to create subreddits when it is created in the post itself
 
- app.post('/n/:subreddit',(req, res) => {
+     **/
+
+     // CREATE
+  app.post('/posts', (req, res) => {
+    // INSTANTIATE INSTANCE OF POST MODEL
+    var post = new Post(req.body);
+
+    // SAVE INSTANCE OF POST MODEL TO DB
+    post.save((err, post) => {
+      // REDIRECT TO THE ROOT
+      return res.redirect('/');
+    })
+  });
+
+
+// Route to create categorys when it is created in the post itself
+
+ app.post('/n/:category',(req, res) => {
    post.save().then((post) => {
-     res.redirect('/n/:subreddit');
+     res.redirect('/n/:category');
    }).catch((err) => {
      console.log(err.message)
 
@@ -101,12 +115,12 @@ app.put('posts/:id/vote-down', function (req, res) {
  });
 
 ///route to display all the post that follow a particular sub reddit
- app.get('/n/:subreddit',(req, res) => {
-   //console.log(req.params.subreddit)
+ app.get('/n/:category',(req, res) => {
+   //console.log(req.params.category)
 
-   Post.find({subreddit:req.params.subreddit}).then((post) => {
+   Post.find({category:req.params.category}).then((post) => {
      var currentUser = req.user;
-       res.render('subreddit', {post, currentUser: currentUser});
+       res.render('category', {post, currentUser: currentUser});
      }).catch((err) => {
          console.log("no page to be found");
      })
