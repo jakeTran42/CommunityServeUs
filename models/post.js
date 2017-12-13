@@ -3,7 +3,7 @@ var mongoose = require('mongoose'),
 
 var PostSchema = new Schema({
   title             : { type: String, required: true }
-  , address             : { type: String, required: true }
+  , address         : { type: String, required: true }
   , summary         : { type: String, required: true }
   , category        : { type: String, required: true }
   , mapsUrl         : { type: String, required: true }
