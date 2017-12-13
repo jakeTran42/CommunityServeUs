@@ -3,6 +3,15 @@
 
 
 
+
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <a href="{{post.url}}" class="lead">{{post.title}}</a>
+    <p>Summary: {{post.summary}}</p>
+    <p>Submitted By: {{post.author.username}}</p>
+
+  </div>
+
   <div class="col-sm-6 col-sm-offset-3">
   <form method="POST" action="/posts/{{post._id}}/comments">
     <label for="comment-content"> Comment </label>
