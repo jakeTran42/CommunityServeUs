@@ -1,9 +1,27 @@
+html, body {
+    overflow-y: scroll;
+}
+
 body {
   background-color: #252528;
 }
 
 .navbar {
-  background-color: #404248;
+  background-color: #404248 !important;
+}
+
+.navbar-brand {
+    position: relative !important;
+    top: -10px !important;
+}
+
+.navbar-right {
+    position: relative !important;
+    top: -10px !important;
+}
+
+.container-fluid {
+    padding-top: 15px;
 }
 
 
