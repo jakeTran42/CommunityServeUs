@@ -3,9 +3,10 @@ var mongoose = require('mongoose'),
 
 var PostSchema = new Schema({
   title             : { type: String, required: true }
-  , url             : { type: String, required: true }
+  , address             : { type: String, required: true }
   , summary         : { type: String, required: true }
-  , subreddit        : { type: String, required: true }
+  , category        : { type: String, required: true }
+  , mapsUrl         : { type: String, required: true }
 , comments       : [{ type: Schema.Types.ObjectId, ref: 'Comment' }]
 , author         : { type: Schema.Types.ObjectId, ref: 'User', required: true }
 });

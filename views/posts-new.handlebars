@@ -5,16 +5,20 @@
       <legend>Category</legend>
       <div class="form-group">
         <label for="subreddit">Subreddit</label>
-        <input type="text" name="subreddit" class="form-control" id="post-subreddit" placeholder="Title" value="{{posts.subreddit}}"></input>
+        <input type="text" name="subreddit" class="form-control" id="post-subreddit" placeholder="Title" value="{{posts.category}}"></input>
       </div>
-      <legend>New Post</legend>
+      <legend>New Event</legend>
       <div class="form-group">
         <label for="post-title">Title</label>
         <input type="text" name="title" class="form-control" id="post-title" placeholder="Title" value="{{posts.title}}"></input>
       </div>
       <div class="form-group">
-        <label for="post-url">Url</label>
-        <input type="url" name="url" class="form-control" id="post-url" placeholder="https://www.google.com" value="{{posts.url}}"></input>
+        <label for="address">Address</label>
+        <input type="address" name="address" class="form-control" id="address" placeholder="example: 123 Carson Street SF,CA 94108" value="{{posts.address}}"></input>
+      </div>
+      <div class="form-group">
+        <label for="mapsUrl">Google Maps URL</label>
+        <input type="mapsUrl" name="mapsUrl" class="form-control" id="mapsUrl" placeholder="https://www.google.com/maps" value="{{posts.mapsUrl}}"></input>
       </div>
       <div class="form-group">
         <label for="post-summary">Summary</label>
@@ -22,7 +26,7 @@
       </div>
 
       <div class='text-right'>
-        <button type="submit" class="btn btn-primary">Reply<button>
+        <button type="submit" class="btn btn-primary">Create Event<button>
       </div>
 
 
