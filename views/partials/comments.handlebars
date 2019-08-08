@@ -1,0 +1,11 @@
+{{#each this.comments}}
+<div style="padding-left: 75px;">
+<hr>
+<p>{{this.content}}</p>
+<a href="/comments/{{this._id}}/new">Reply</a>
+    {{#if this.comments}}
+        {{> comments}}
+
+    {{/if}}
+</div>
+{{/each}}

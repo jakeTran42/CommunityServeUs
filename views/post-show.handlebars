@@ -1,0 +1,63 @@
+<div class="row">
+	  <div class="col-md-7">
+        <iframe src="{{this.address}}" width="100%" height="315" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+
+      <div class="col-md-5">
+          <h4><strong>Event Information</strong></h4>
+        <form>
+          <div class="form-group">
+            <input type="text" class="form-control" name="" value="" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" name="" value="" placeholder="E-mail">
+          </div>
+          <div class="form-group">
+            <input type="tel" class="form-control" name="" value="" placeholder="Phone">
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" name="" rows="3" placeholder="Message"></textarea>
+          </div>
+          <button class="btn btn-default" type="submit" name="button">
+              <i class="fa fa-paper-plane-o" aria-hidden="true"></i> Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <a href="{{post.url}}" class="lead">{{post.title}}</a>
+    <p>Summary: {{post.summary}}</p>
+    <p>Submitted By: {{post.author.username}}</p>
+
+  </div>
+
+  <div class="col-sm-6 col-sm-offset-3">
+  <form method="POST" action="/posts/{{post._id}}/comments">
+    <label for="comment-content"> Comment </label>
+    <textarea name="content" id="comment-content" class='form-control' placeholder="Comment"></textarea>
+    <div class="text-right">
+      <button type="submit">Comment</button>
+    </div>
+  </form>
+  <div>
+    <p>Comments:</p>
+    {{#each post.comments}}
+      <li class="list-group-item">
+        <a href="/comments/{{this._id}}/new">Comment</a>
+        <p>{{this.content}}</p>
+        {{#if this.comments}}
+          {{> comments}}
+        {{/if}}
+      </li>
+    {{/each}}
+  </div>
+
+</div>
